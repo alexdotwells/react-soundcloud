@@ -27,40 +27,46 @@ class Tracks extends Component {
         });
         // Save to state
         this.setState(() => ({ scInitialized: true }));
+
+        // Define Fetch
+        this.fetchFavorites = () => {
+
+            var userId = 63317612;
+            // Get User Favorites tracklist
+            SC.get(`/users/${userId}/favorites`,{
+                limit: 3000,
+                linked_partitioning: 1
+                
+            }).then(res => {
+                // Get tracklist from state
+                var tracklist = this.state.tracks.slice();
+
+                // Get tracks array from SC API response
+                var collection = res.collection.slice();
+
+                // Concat existing tracklist and new SC track collection
+                tracklist = tracklist.concat(collection);
+
+                // Save to state
+                this.setState(() => ({ tracks: tracklist }));
+                this.setState(() => ({ nextHref: res.next_href }));
+
+            }).catch(err => {
+                // ERMAHGERD!!
+                console.log(`ERROR ${err}`);           
+            });
+
+        };     
     }
 
     getTracks() {
-        var userId = 63317612;
-
         // Initialize Soundcloud
         if (this.state.scInitialized !== true) {
             this.scInit();
         }
 
-        // Get User Favorites tracklist
-        SC.get(`/users/${userId}/favorites`,{
-            limit: 3000,
-            linked_partitioning: 1
-            
-        }).then(res => {
-            // Get tracklist from state
-            var tracklist = this.state.tracks.slice();
-
-            // Get tracks array from SC API response
-            var collection = res.collection.slice();
-
-            // Concat existing tracklist and new SC track collection
-            tracklist = tracklist.concat(collection);
-
-            // Save to state
-            this.setState(() => ({ tracks: tracklist }));
-            this.setState(() => ({ nextHref: res.next_href }));
-
-        })
-            // ERMAHGERD!!
-            .catch(err => {
-                console.log(`ERROR ${err}`);
-            });
+        // Fetch user favorites
+        this.fetchFavorites();
     }
 
     render() {
