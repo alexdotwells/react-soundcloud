@@ -6,16 +6,12 @@ export default class App extends Component {
 
     constructor(){
         super();
-
-        this.state = {
-            title: 'React SoundCloud (Nolfi Stylee)'
-        };
     }
 
     render() {
         return (
             <div>
-                <Header title={this.state.title} />
+                <Header title='React SoundCloud (Nolfi Stylee)' />
                 <div className="mt-5">
                     <Tracks />
                 </div>
