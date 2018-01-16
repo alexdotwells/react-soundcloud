@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Tracks from './Tracks/Tracks';
+import Favorites from '../services/soundcloud/Favorites';
 
 export default class App extends Component {
 
@@ -17,7 +17,7 @@ export default class App extends Component {
             <div>
                 <Header title={this.state.title} />
                 <div className="mt-5">
-                    <Tracks />
+                    <Favorites />
                 </div>
             </div>
         );

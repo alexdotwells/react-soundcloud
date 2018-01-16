@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SC from 'soundcloud';
 
-class Tracks extends Component {
+class Favorites extends Component {
 
     constructor() {
         super();
@@ -80,4 +80,4 @@ class Tracks extends Component {
     }
 }
 
-export default Tracks;
+export default Favorites;
