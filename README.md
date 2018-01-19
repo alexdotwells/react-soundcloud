@@ -1,17 +1,14 @@
-# React SoundCloud Client
+# React Starter
 
-A basic SoundCloud client build with React.
+A basic template that consists of the essential elements that are required to start building a React application.
+
 
 ### Install
-
-Follow the following steps to get development environment running.
 
 * Install node modules
 
    ```bash
-   cd react-timer-basic
    npm install
-   npm dedupe
    ```
 
 ### Build
@@ -24,28 +21,6 @@ Follow the following steps to get development environment running.
   npm run build
   ```
 
-* Build application and start watching for changes
-
-  This command will also run ESLint as part of build process.
-
-  ```bash
-  npm run build:watch
-  ```
-
-### Run ESlint
-
-* Lint project using ESLint
-
-  ```bash
-  npm run lint
-  ```
-
-* Lint project using ESLint, and autofix
-
-  ```bash
-  npm run lint:fix
-  ```
-
 ### Run
 
 * Run start
@@ -56,14 +31,8 @@ Follow the following steps to get development environment running.
   npm start
   ```
 
-* Run webpack dev server
+* Run webpack dev server (simple development http server with live reload capability)
 
   ```bash
   npm run serve:dev
-  ```
-
-* Alternatively run live-server (simple development http server with live reload capability)
-
-  ```bash
-  npm run serve
   ```

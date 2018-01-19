@@ -11,16 +11,6 @@ module.exports = {
     module: {
         rules: [
             {
-                enforce: 'pre',
-                test: /\.js$/,
-                loader: 'eslint-loader',
-                options: {
-                    failOnWarning: true,
-                    failOnerror: true
-                },
-                exclude: /node_modules/
-            },
-            {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/
@@ -31,7 +21,7 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.svg$/,
+                test: /\.svg|.png|.jpg$/,
                 loader: 'url-loader',
                 exclude: /node_modules/
             }
