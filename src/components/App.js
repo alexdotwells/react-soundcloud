@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Favorites from '../services/soundcloud/Favorites';
+import Favorites from './services/SoundCloudService';
 
 export default class App extends Component {
 
@@ -8,7 +8,7 @@ export default class App extends Component {
         super();
 
         this.state = {
-            title: 'React SoundCloud (Nolfi Stylee)'
+            title: 'React SoundCloud Client'
         };
     }
 
