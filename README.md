@@ -8,6 +8,10 @@ A basic template that consists of the essential elements that are required to st
 * Install node modules
 
    ```bash
+<<<<<<< HEAD
+=======
+   cd react-soundcloud
+>>>>>>> d48a2573f274ba6b5d936cf139bdd2a3d571c156
    npm install
    ```
 
@@ -36,3 +40,12 @@ A basic template that consists of the essential elements that are required to st
   ```bash
   npm run serve:dev
   ```
+<<<<<<< HEAD
+=======
+
+* Alternatively run live-server (simple development http server with live reload capability)
+
+  ```bash
+  npm run serve
+  ```
+>>>>>>> d48a2573f274ba6b5d936cf139bdd2a3d571c156
