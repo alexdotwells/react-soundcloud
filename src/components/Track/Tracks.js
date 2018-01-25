@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TrackList from './TrackList';
-import SoundCloudService from '../../services/ScService';
+import SoundCloudService from '../../services/SoundCloudService';
 
 export default class Tracks extends Component {
 

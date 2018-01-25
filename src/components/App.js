@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Tracks from './Track/Tracks';
-//import Favorites from '../services/SoundCloudService';
 
 export default class App extends Component {
 
