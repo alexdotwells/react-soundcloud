@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
-// import Favorites from './Favorites.js';
-import Favorites from './services/SoundCloudService'
+import Tracks from './Track/Tracks';
 
 export default class App extends Component {
 
@@ -9,10 +8,7 @@ export default class App extends Component {
         super();
 
         this.state = {
-            title: 'Reactory SoundCloud Client'
-            // tracks: [],
-            // scInitialized: false,
-            // nextHref: ''
+            title: 'React SoundCloud Client'
         };
         // this.getTracks = this.getTracks.bind(this);
         // this.scInit = this.scInit.bind(this);

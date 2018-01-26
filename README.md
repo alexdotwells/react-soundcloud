@@ -1,6 +1,6 @@
 # React Starter
 
-A basic template that consists of the essential elements that are required to start building a React application.
+A basic SoundCloud React application.
 
 
 ### Install
