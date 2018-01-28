@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StarRating from '../StarRating';
-// {props.track.description}
+
 const TrackCard = (props) => (
     <div className="track-card">
         <div className="track-card card">
             <img className="card-img-top" src={props.track.artwork_url} alt="" />
             <div className="card-body">
-                <h4 className="card-title">{props.track.title}</h4>
-                <h6 className="card-subtitle mb-2 text-muted">{props.track.user.username}</h6>
-                <p className="text-justify" style={{fontSize: '14px'}}>text</p>
+                <h4 className="card-title">{props.track.title}</h4> 
+                <h6 className="card-subtitle mb-2 text-muted">{props.track.user.username}</h6>       
+                {/* <p className="text-justify" style={{fontSize: '14px'}}>{props.track.title}</p> */}
             </div>
             <div className="card-footer">
                 <div className="clearfix">
