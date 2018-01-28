@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TrackTile from './TrackTile';
+import TrackCard from './TrackCard';
 
 const getTracks = (tracks) => {
     return (
-        <div className="tile-stack">
+        <div className="card-deck">
             {
-                tracks.map(track => <TrackTile key={track.id} track={track} />)
+                tracks.map(track => <TrackCard key={track.id} track={track} />)
             }
         </div>
     );
