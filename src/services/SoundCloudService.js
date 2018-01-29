@@ -18,10 +18,8 @@ export default class ScService {
         })
 
         // Modify artwork image size
-        res.collection.forEach(function(track,index){
-            if (track.artwork_url != null)
-                track.artwork_url = track.artwork_url.replace("-large","-t300x300");
-        });
+        res.collection.forEach(
+            t =>  (t.artwork_url != null) ? t.artwork_url = t.artwork_url.replace("-large","-t300x300") : t);
 
         return res.collection;
     }
