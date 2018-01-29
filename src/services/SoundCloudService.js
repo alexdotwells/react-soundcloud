@@ -7,7 +7,7 @@ export default class ScService {
 
         // Initialize SoundCloud Client
         SC.initialize({
-            client_id: 'aa43f640526cb3f753a3a2ce40a340b4',
+            client_id: '##CLIENT_ID##',
             redirect_uri: 'http://localhost:3000/callback'
         });  
 
