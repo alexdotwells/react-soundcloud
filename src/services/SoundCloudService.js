@@ -3,7 +3,7 @@ import SC from 'soundcloud';
 export default class ScService {
 
     static async getFavorites() {
-        var userId = 63317612;
+        let userId = 63317612;
 
         // Initialize SoundCloud Client
         SC.initialize({
@@ -12,10 +12,14 @@ export default class ScService {
         });
 
         // Get User Favorites from SC API
-        const res = await SC.get(`/users/${userId}/favorites`,{
-            limit: 20,
+        let res = await SC.get(`/users/${userId}/favorites`,{
+            limit: 300,
             linked_partitioning: 1
         })
+
+        // Modify artwork image size
+        res.collection.forEach(
+            t =>  (t.artwork_url != null) ? t.artwork_url = t.artwork_url.replace("-large","-t300x300") : t);
 
         return res.collection;
     }
