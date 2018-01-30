@@ -7,7 +7,7 @@ export default class ScService {
 
         // Initialize SoundCloud Client
         SC.initialize({
-            client_id: '##CLIENT_ID##',
+            client_id: '##Client_ID##',
             redirect_uri: 'http://localhost:3000/callback'
         });  
 
@@ -17,11 +17,21 @@ export default class ScService {
             linked_partitioning: 1        
         })
 
-        // Modify artwork image size
-        res.collection.forEach(
-            t =>  (t.artwork_url != null) ? t.artwork_url = t.artwork_url.replace("-large","-t300x300") : t);
+        // Clean-up response data
+        res.collection.forEach(t => ScService.convertTrackDetails(t));
 
         return res.collection;
     }
 
+    static convertTrackDetails(track) {
+        // Modify time to mm:ss
+        let minutes = Math.floor(track.duration / 60000);
+        let seconds = ((track.duration % 60000) / 1000).toFixed(0);
+        track.duration = (seconds == 60 ? (minutes+1) + ":00" : minutes + ":" + (seconds < 10 ? "0" : "") + seconds);
+
+        // Modify artwork image size
+        track.artwork_url = (track.artwork_url != null) ? track.artwork_url = track.artwork_url.replace("-large","-t300x300") : "";
+
+        return track;
+    }
 }

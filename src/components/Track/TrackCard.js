@@ -9,7 +9,7 @@ const TrackCard = (props) => (
             <div className="card-body">
                 <h4 className="card-title">{props.track.title}</h4> 
                 <h6 className="card-subtitle mb-2 text-muted">{props.track.user.username}</h6>       
-                {/* <p className="text-justify" style={{fontSize: '14px'}}>{props.track.title}</p> */}
+                <p className="text-justify" style={{fontSize: '14px'}}>{props.track.duration}</p>
             </div>
             <div className="card-footer">
                 <div className="clearfix">
