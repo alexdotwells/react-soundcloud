@@ -1,0 +1,15 @@
+TODO:
+-----------------------------------
+
+- Refactor existing CSS
+- Add styles for Track Duration
+- Add streaming player (markup and styles)
+- Add streaming capability on track click
+- Add "more info" button
+- Add random order toggle
+- add user login/auth
+- Add Rating system
+- Add track length filter
+- Build database for app
+- Add DB table for users
+- Add DB table for track ratings (by user)
