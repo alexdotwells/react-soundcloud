@@ -1,26 +1,13 @@
 import React from 'react';
-import Timestamps from './Timestamps.js'
+import Timestamps from './Timestamps';
+import Scrubber from './Scrubber'
+import Controls from './Controls';
 
 class Player extends React.Component {
 
   constructor() {
     super();
-    this.props = {
-      track: {
-        artwork_url: 'https://i1.sndcdn.com/artworks-000292251036-ozzjbq-t300x300.jpg',
-        duration: 7206448,
-        stream_url: 'https://api.soundcloud.com/tracks/390535887/stream',
-        title: 'Tiger & Woods - 28th January 2018',
-        uri: 'https://api.soundcloud.com/tracks/390535887',
-        user: {
-          avatar_url: 'https://i1.sndcdn.com/avatars-000309386640-840197-large.jpg',
-          id: 338690,
-          permalink_url: 'http://soundcloud.com/rinsefm',
-          uri:'https://api.soundcloud.com/users/338690',
-          username: 'Rinse FM'
-        }
-      }
-    }
+
     this.state = {
       playStatus: 'play',
       currentTime: 0
@@ -31,7 +18,8 @@ class Player extends React.Component {
 
   togglePlay() {
     let status = this.state.playStatus;
-    let audio = document.getElementById('audio');
+    let audio = document.querySelector('audio');
+    //console.log(audio);
     if(status === 'play') {
       status = 'pause';
       audio.play();
@@ -39,20 +27,23 @@ class Player extends React.Component {
       status = 'play';
       audio.pause()
     }
-    this.setState({playStatus:staus});
+    this.setState({playStatus:status});
   }
 
 
 
   render() {
+
     return (
       <div className="player">
-        <div className="art" style={{'backgroundImage': 'url(' + this.props.track.artwork_url + ')'}}></div>
-        <TrackInformation track={this.props.track} />
+        <div className="art" style={{'backgroundImage': 'url(' + this.props.selectedTrack.artwork_url + ')'}}></div>
+        <div className="track-info">
+          <h3>{this.props.selectedTrack.title}</h3>
+        </div>
         <Scrubber />
         <Controls isPlaying={this.state.playStatus} onClick={this.togglePlay}/>
-        <Timestamps duration={this.props.track.duration} currentTime={this.state.currentTime} />
-        <audio><source src={this.props.track.stream_url} /></audio>
+        <Timestamps duration={this.props.selectedTrack.duration} currentTime={this.state.currentTime} />
+        <audio><source src={this.props.selectedTrack.stream_url+'?client_id=aa43f640526cb3f753a3a2ce40a340b4'} /></audio>
     </div>
     )
   }
