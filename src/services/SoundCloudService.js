@@ -7,14 +7,17 @@ export default class ScService {
 
         // Initialize SoundCloud Client
         SC.initialize({
-            client_id: 'aa43f640526cb3f753a3a2ce40a340b4ç',
+            client_id: 'aa43f640526cb3f753a3a2ce40a340b4',
             redirect_uri: 'http://localhost:3000/callback'
         });
 
         // Get User Favorites from SC API
         let res = await SC.get(`/users/${userId}/favorites`,{
             limit: 300,
-            linked_partitioning: 1
+            linked_partitioning: 1,
+            duration: {
+              from: 1800000 // anything over 30 minutes
+            }
         })
 
         // Modify artwork image size
